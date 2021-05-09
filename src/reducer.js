@@ -3,15 +3,16 @@ export const initialState = {
 };
 
 export const actionTypes = {
-  "": "",
+  SET_SEARCH_TERM: "SET_SEARCH_TERM",
 };
 
-const reducer = ({ action, state }) => {
-  console.log(action.type);
+const reducer = (state, action) => {
+  console.log(action);
   switch (action.type) {
-    case "":
+    case actionTypes.SET_SEARCH_TERM:
       return {
         ...state,
+        term: action.term,
       };
     default:
       return state;
